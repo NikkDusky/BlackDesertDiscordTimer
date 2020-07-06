@@ -184,13 +184,8 @@ def timer(boss_name, boss_hour):
     bosscloser = (boss_name + " " + str(boss_countH) + ":" + str(boss_countM) + ":" + str(boss_countS) + ":" + str(boss_countMill))
     return bosscloser
 
-
-
 PREFIX=("#")
 bot = commands.Bot(command_prefix=PREFIX, description='Hi')
-
-
-
 
 async def status_task():
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="Black Desert Online"), status=discord.Status('dnd'))
@@ -198,7 +193,6 @@ async def status_task():
     status_sign = 'idle'
     while True:
         
-
         os.system('cls||clear')
         rand_time = random.uniform(5, 6)
         if status_sign == 'online':
@@ -210,11 +204,11 @@ async def status_task():
         print('Bot working.\nStatus: ' + str(status_sign) + '\nSleep: ' + str(rand_time))
         await asyncio.sleep(rand_time)
   
-
-
 @bot.event
 async def on_ready():
     print("Bot is dnd... Start cycle task...\n")
     bot.loop.create_task(status_task())
+
+
 
 bot.run('________BOT_TOKEN_HERE________') # < You can create own discord app and get token.
